@@ -37,18 +37,29 @@ const defaultMenu = [
 
 export const sidebarIcons = defaultMenu.map((i) => i.icon)
 
-export const useSidebarStore = defineStore('dashboardMenu', () => {
+export const useSidebarStore = defineStore('dashboardStore', () => {
   const menu = ref<IMenuItem[]>(defaultMenu)
 
-  const route = useRoute()
+  const isShow = ref(false)
 
-  const submenu = computed<IMenuChildItem[] | null>(() => {
-    return activeMenuItem.value?.children ?? null
-  })
+  const show = () => {
+    isShow.value = true
+  }
 
-  const activeMenuItem = computed<IMenuItem | null>(() => {
-    return menu.value.find((item) => route.path === item.url) ?? null
-  })
+  const hide = () => {
+    isShow.value = false
+  }
 
-  return { menu, activeMenuItem, submenu }
+  const toggle = () => {
+    isShow.value = !isShow.value
+  }
+
+  return {
+    menu,
+    isShow,
+
+    show,
+    hide,
+    toggle,
+  }
 })

@@ -24,7 +24,7 @@ const toggleChildMenu = () => {
       v-if="!item.children"
       :href="href"
       @click="navigate"
-      class="flex items-center h-12 px-4 text-slate-500 transition duration-300 hover:(bg-blue-50 shadow-blue-200 shadow-md)"
+      class="flex items-center h-14 px-4 rounded-xl text-slate-500 transition duration-300 z-10 hover:(bg-blue-50 shadow-blue-200 shadow-md)"
       :class="isActive && 'bg-blue-50 shadow-blue-200 shadow-md'"
     >
       <span class="mr-2"><div :class="item.icon" /></span>
@@ -34,7 +34,7 @@ const toggleChildMenu = () => {
     <template v-else>
       <div
         @click="toggleChildMenu"
-        class="flex items-center h-12 px-4 text-slate-500 transition duration-300 cursor-pointer select-none"
+        class="flex items-center h-14 px-4 rounded-xl text-slate-500 transition duration-300 cursor-pointer select-none z-10"
         hover="bg-blue-50 shadow-blue-200 shadow-md"
         :class="isChildMenuActive && 'bg-blue-50 shadow-blue-200 shadow-md'"
       >
@@ -46,21 +46,40 @@ const toggleChildMenu = () => {
         </span>
       </div>
 
-      <div
-        v-if="isChildMenuActive"
-        class="relative flex flex-col gap-2 text-slate-500 after:(content-empty absolute left-6 top-0 h-full w-px -z-10 bg-slate-300)"
-      >
-        <RouterLink
-          v-for="child in item.children"
-          :key="child.url"
-          :to="child.url"
-          class="flex items-center h-12 pl-10"
-          hover="text-blue-400"
-          active-class="text-blue-400"
+      <Transition>
+        <div
+          v-if="isChildMenuActive"
+          class="relative flex flex-col gap-2 text-slate-500 z-0 overflow-hidden after:(content-empty absolute left-6 top-0 h-full w-px -z-10 bg-slate-300)"
         >
-          <span>{{ child.title }}</span>
-        </RouterLink>
-      </div>
+          <RouterLink
+            v-for="child in item.children"
+            :key="child.url"
+            :to="child.url"
+            class="flex items-center h-12 pl-10"
+            hover="text-blue-400"
+            active-class="text-blue-400"
+          >
+            <span>{{ child.title }}</span>
+          </RouterLink>
+        </div>
+      </Transition>
     </template>
   </RouterLink>
 </template>
+
+<style scoped>
+.v-enter-active,
+.v-leave-active {
+  transition: all 0.3s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+  opacity: 0;
+}
+
+.v-enter-to,
+.v-leave-from {
+  opacity: 1;
+}
+</style>

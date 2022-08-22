@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     GradientCircleBorder: typeof import('./components/GradientCircleBorder.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheHeader: typeof import('./components/TheHeader.vue')['default']
     TheLogo: typeof import('./components/TheLogo.vue')['default']
     TheSidebar: typeof import('./components/TheSidebar.vue')['default']
     TheSidebarMain: typeof import('./components/TheSidebarMain.vue')['default']
@@ -22,5 +23,6 @@ declare module '@vue/runtime-core' {
     TheSidebarMenuWrap: typeof import('./components/TheSidebarMenuWrap.vue')['default']
     TheSidebarNav: typeof import('./components/TheSidebarNav.vue')['default']
     TheSidebarNavItem: typeof import('./components/TheSidebarNavItem.vue')['default']
+    TheSidebarOverlay: typeof import('./components/TheSidebarOverlay.vue')['default']
   }
 }
