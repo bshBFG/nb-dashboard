@@ -13,6 +13,7 @@
     "lint": "eslint . --ext .vue,.js,.jsx,.cjs,.mjs,.ts,.tsx,.cts,.mts --fix --ignore-path .gitignore"
   },
   "dependencies": {
+    "@iconify-json/tabler": "^1.1.26",
     "@vueuse/core": "^9.1.0",
     "nprogress": "^0.2.0",
     "pinia": "^2.0.16",

@@ -13,6 +13,7 @@ declare module '@vue/runtime-core' {
     GradientCircleBorder: typeof import('./components/GradientCircleBorder.vue')['default']
     RouterLink: typeof import('vue-router')['RouterLink']
     RouterView: typeof import('vue-router')['RouterView']
+    TheBody: typeof import('./components/TheBody.vue')['default']
     TheHeader: typeof import('./components/TheHeader.vue')['default']
     TheLogo: typeof import('./components/TheLogo.vue')['default']
     TheSidebar: typeof import('./components/TheSidebar.vue')['default']

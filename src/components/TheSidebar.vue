@@ -3,6 +3,7 @@ import { useSidebarStore } from '@/store/sidebar'
 import { breakpointsTailwind } from '@vueuse/core'
 
 const { md } = useBreakpoints(breakpointsTailwind)
+const route = useRoute()
 
 const sidebar = useSidebarStore()
 
@@ -16,13 +17,22 @@ watch(
     !md.value ? sidebar.hide() : sidebar.show()
   }
 )
+
+watch(
+  () => route.path,
+  () => {
+    if (!md.value) {
+      sidebar.hide()
+    }
+  }
+)
 </script>
 
 <template>
   <transition>
     <div
       v-if="sidebar.isShow"
-      class="fixed top-0 left-0 h-full w-75 z-20"
+      class="fixed top-0 left-0 h-full w-70 z-20"
       display="flex"
       flex="col"
       bg="white"

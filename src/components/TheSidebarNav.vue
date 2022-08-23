@@ -5,7 +5,7 @@ const { menu } = useSidebarStore()
 </script>
 
 <template>
-  <div class="flex flex-col gap-2">
+  <div class="flex flex-col">
     <TheSidebarNavItem v-for="item in menu" :key="item.url" :item="item" />
   </div>
 </template>

@@ -24,42 +24,56 @@ const toggleChildMenu = () => {
       v-if="!item.children"
       :href="href"
       @click="navigate"
-      class="flex items-center h-14 px-4 rounded-xl text-slate-500 transition duration-300 z-10 hover:(bg-blue-50 shadow-blue-200 shadow-md)"
-      :class="isActive && 'bg-blue-50 shadow-blue-200 shadow-md'"
+      class="mb-1 h-12 px-4 flex items-center rounded-lg text-sm transition duration-300 z-10"
+      :class="isActive ? 'bg-blue-50 text-blue-500' : 'text-slate-500'"
+      hover="bg-blue-50"
     >
-      <span class="mr-2"><div :class="item.icon" /></span>
+      <span class="mr-4"><div class="h-5 w-5" :class="item.icon" /></span>
       <span>{{ item.title }}</span>
     </a>
 
     <template v-else>
       <div
         @click="toggleChildMenu"
-        class="flex items-center h-14 px-4 rounded-xl text-slate-500 transition duration-300 cursor-pointer select-none z-10"
-        hover="bg-blue-50 shadow-blue-200 shadow-md"
-        :class="isChildMenuActive && 'bg-blue-50 shadow-blue-200 shadow-md'"
+        class="mb-1 h-12 px-4 flex items-center rounded-lg text-sm transition duration-300 cursor-pointer select-none z-10"
+        :class="
+          isChildMenuActive ? 'bg-blue-50 text-blue-500' : 'text-slate-500'
+        "
+        hover="bg-blue-50"
       >
-        <span class="mr-2"><div :class="item.icon" /></span>
+        <span class="mr-4"><div class="h-5 w-5" :class="item.icon" /></span>
         <span>{{ item.title }}</span>
         <span class="ml-auto">
-          <div v-if="isChildMenuActive" class="i-mdi-chevron-down" />
-          <div v-else class="i-mdi-chevron-up" />
+          <div
+            class="i-tabler-chevron-right h-4 w-4"
+            :class="isChildMenuActive ? 'rotate-90' : 'rotate-0'"
+          />
         </span>
       </div>
 
       <Transition>
         <div
           v-if="isChildMenuActive"
-          class="relative flex flex-col gap-2 text-slate-500 z-0 overflow-hidden after:(content-empty absolute left-6 top-0 h-full w-px -z-10 bg-slate-300)"
+          class="relative flex flex-col text-slate-500 z-0 overflow-hidden)"
         >
           <RouterLink
             v-for="child in item.children"
             :key="child.url"
             :to="child.url"
-            class="flex items-center h-12 pl-10"
-            hover="text-blue-400"
+            class="mb-1 h-10 pl-4 flex items-center rounded-lg text-sm"
+            hover="bg-blue-50"
             active-class="text-blue-400"
+            v-slot="{ isActive }"
           >
-            <span>{{ child.title }}</span>
+            <span class="h-5 w-5 mr-4 grid place-items-center">
+              <div
+                class="h-1 w-1 rounded-full transition duration-300"
+                :class="isActive ? 'scale-200 bg-blue-500' : 'bg-slate-500'"
+              />
+            </span>
+            <span :class="isActive ? 'text-slate-700' : 'text-slate-500'">{{
+              child.title
+            }}</span>
           </RouterLink>
         </div>
       </Transition>
@@ -76,6 +90,7 @@ const toggleChildMenu = () => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
+  max-height: 0;
 }
 
 .v-enter-to,

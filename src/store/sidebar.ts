@@ -12,16 +12,21 @@ export interface IMenuItem {
 }
 
 const defaultMenu = [
-  { title: 'Dashboard', url: '/', icon: 'i-mdi-chart-pie' },
+  { title: 'Dashboard', url: '/', icon: 'i-tabler-dashboard' },
+  {
+    title: 'Users',
+    url: '/users',
+    icon: 'i-tabler-users',
+  },
   {
     title: 'Media',
     url: '/media',
-    icon: 'i-mdi-folder-multiple-image',
+    icon: 'i-tabler-photo',
   },
   {
     title: 'Settings',
     url: '/settings',
-    icon: 'i-mdi-cog',
+    icon: 'i-tabler-settings',
     children: [
       {
         title: 'General',
