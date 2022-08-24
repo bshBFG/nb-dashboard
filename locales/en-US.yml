@@ -1,6 +1,15 @@
-page:
-  home: Home Page
-  media: Media Files
-  settings: Settings
+dashboard: Dashboard
+media: Media Files
+settings: Settings
+users: Users
+about: About Page
+general: General
+profile: Profile
+
+menu:
+  dashboard: Dashboard
   users: Users
-  about: About Page
+  media: Media
+  settings: Settings
+  general: General
+  profile: Profile

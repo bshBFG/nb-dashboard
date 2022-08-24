@@ -1,5 +1,7 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+const { t } = useI18n()
+</script>
 
 <template>
-  <h1>Profile</h1>
+  <TheContent :title="t('profile')"></TheContent>
 </template>

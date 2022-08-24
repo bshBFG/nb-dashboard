@@ -22,7 +22,10 @@ export default defineConfig({
     presetTypography(),
     presetWebFonts({
       fonts: {
-        sans: 'DM Sans',
+        sans: {
+          name: 'Open Sans',
+          weights: ['400', '500', '600'],
+        },
         serif: 'DM Serif Display',
         mono: 'DM Mono',
       },
@@ -30,4 +33,5 @@ export default defineConfig({
   ],
   transformers: [transformerDirectives(), transformerVariantGroup()],
   safelist: [...sidebarIcons],
+  theme: {},
 })

@@ -12,28 +12,28 @@ export interface IMenuItem {
 }
 
 const defaultMenu = [
-  { title: 'Dashboard', url: '/', icon: 'i-tabler-dashboard' },
+  { title: 'dashboard', url: '/', icon: 'i-tabler-dashboard' },
   {
-    title: 'Users',
+    title: 'users',
     url: '/users',
     icon: 'i-tabler-users',
   },
   {
-    title: 'Media',
+    title: 'media',
     url: '/media',
     icon: 'i-tabler-photo',
   },
   {
-    title: 'Settings',
+    title: 'settings',
     url: '/settings',
     icon: 'i-tabler-settings',
     children: [
       {
-        title: 'General',
+        title: 'general',
         url: '/settings/general',
       },
       {
-        title: 'Profile',
+        title: 'profile',
         url: '/settings/profile',
       },
     ],

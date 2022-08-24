@@ -22,9 +22,9 @@ const sidebar = useSidebarStore()
     >
       <TheHeader />
 
-      <TheBody class="flex-auto">
+      <div class="p-5 flex-1">
         <RouterView />
-      </TheBody>
+      </div>
     </div>
   </div>
 </template>

@@ -7,6 +7,8 @@ export interface Props {
 
 const props = defineProps<Props>()
 
+const { t } = useI18n()
+
 const route = useRoute()
 
 const isItemPathInRoute = computed(() => route.path.includes(props.item.url))
@@ -25,11 +27,13 @@ const toggleChildMenu = () => {
       :href="href"
       @click="navigate"
       class="mb-1 h-12 px-4 flex items-center rounded-lg text-sm transition duration-300 z-10"
-      :class="isActive ? 'bg-blue-50 text-blue-500' : 'text-slate-500'"
+      :class="
+        isActive ? 'bg-blue-50 text-blue-500 font-semibold' : 'text-slate-500'
+      "
       hover="bg-blue-50"
     >
       <span class="mr-4"><div class="h-5 w-5" :class="item.icon" /></span>
-      <span>{{ item.title }}</span>
+      <span>{{ t(`menu.${item.title}`) }}</span>
     </a>
 
     <template v-else>
@@ -37,12 +41,14 @@ const toggleChildMenu = () => {
         @click="toggleChildMenu"
         class="mb-1 h-12 px-4 flex items-center rounded-lg text-sm transition duration-300 cursor-pointer select-none z-10"
         :class="
-          isChildMenuActive ? 'bg-blue-50 text-blue-500' : 'text-slate-500'
+          isChildMenuActive
+            ? 'bg-blue-50 text-blue-500 font-semibold'
+            : 'text-slate-500'
         "
         hover="bg-blue-50"
       >
         <span class="mr-4"><div class="h-5 w-5" :class="item.icon" /></span>
-        <span>{{ item.title }}</span>
+        <span>{{ t(`menu.${item.title}`) }}</span>
         <span class="ml-auto">
           <div
             class="i-tabler-chevron-right h-4 w-4"
@@ -71,9 +77,12 @@ const toggleChildMenu = () => {
                 :class="isActive ? 'scale-200 bg-blue-500' : 'bg-slate-500'"
               />
             </span>
-            <span :class="isActive ? 'text-slate-700' : 'text-slate-500'">{{
-              child.title
-            }}</span>
+            <span
+              :class="
+                isActive ? 'text-slate-700 font-semibold' : 'text-slate-500'
+              "
+              >{{ t(`menu.${child.title}`) }}</span
+            >
           </RouterLink>
         </div>
       </Transition>
@@ -90,7 +99,6 @@ const toggleChildMenu = () => {
 .v-enter-from,
 .v-leave-to {
   opacity: 0;
-  max-height: 0;
 }
 
 .v-enter-to,

@@ -3,5 +3,5 @@ const { t } = useI18n()
 </script>
 
 <template>
-  <h1>{{ t('page.media') }}</h1>
+  <TheContent :title="t('media')"></TheContent>
 </template>

@@ -1,6 +1,15 @@
-page:
-  home: Главная страница
-  media: Медиа файлы
-  settings: Настройки
+media: Медиа файлы
+settings: Настройки
+users: Пользователи
+about: Страница о шаблоне
+dashboard: Панель управления
+general: Общее
+profile: Профиль
+
+menu:
+  dashboard: Панель управления
   users: Пользователи
-  about: Страница о шаблоне
+  media: Медиа
+  settings: Настройки
+  general: Общее
+  profile: Профиль
