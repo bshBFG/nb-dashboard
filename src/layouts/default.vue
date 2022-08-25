@@ -10,7 +10,7 @@ const sidebar = useSidebarStore()
   <div display="flex" h="full" w="full" overflow="x-hidden">
     <div class="fixed top-0 left-0 -z-10 h-screen w-screen overflow-hidden">
       <div
-        class="absolute top-0 left-0 h-screen w-screen overflow-hidden bg-white"
+        class="absolute top-0 left-0 h-screen w-screen overflow-hidden bg-slate-50"
       />
     </div>
 

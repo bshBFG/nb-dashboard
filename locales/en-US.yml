@@ -13,3 +13,15 @@ menu:
   settings: Settings
   general: General
   profile: Profile
+
+userTable:
+  totalUsers: Total
+  profile: Profile
+  role: Role
+  verified: Verified
+  status: Status
+  active: Active
+  banned: Banned
+
+button:
+  addUser: Add User

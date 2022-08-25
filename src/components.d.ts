@@ -9,6 +9,7 @@ declare module '@vue/runtime-core' {
   export interface GlobalComponents {
     AppButton: typeof import('./components/AppButton.vue')['default']
     AppTable: typeof import('./components/AppTable.vue')['default']
+    AppTableUsers: typeof import('./components/AppTableUsers.vue')['default']
     CircleBorder: typeof import('./components/CircleBorder.vue')['default']
     copy: typeof import('./components/TheContent copy.vue')['default']
     GradientCircleBorder: typeof import('./components/GradientCircleBorder.vue')['default']
@@ -29,5 +30,8 @@ declare module '@vue/runtime-core' {
     TheSidebarNav: typeof import('./components/TheSidebarNav.vue')['default']
     TheSidebarNavItem: typeof import('./components/TheSidebarNavItem.vue')['default']
     TheSidebarOverlay: typeof import('./components/TheSidebarOverlay.vue')['default']
+    TheUsersTable: typeof import('./components/TheUsersTable.vue')['default']
+    TheUserTable: typeof import('./components/TheUserTable.vue')['default']
+    UserTable: typeof import('./components/UserTable.vue')['default']
   }
 }

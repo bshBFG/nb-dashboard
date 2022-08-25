@@ -1,4 +1,4 @@
-media: Медиа файлы
+media: Медиа
 settings: Настройки
 users: Пользователи
 about: Страница о шаблоне
@@ -13,3 +13,15 @@ menu:
   settings: Настройки
   general: Общее
   profile: Профиль
+
+userTable:
+  totalUsers: Всего
+  profile: Профиль
+  role: Роль
+  verified: Верификация
+  status: Статус
+  active: Активный
+  banned: Заблокирован
+
+button:
+  addUser: Добавить
