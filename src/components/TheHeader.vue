@@ -30,7 +30,9 @@ const sidebar = useSidebarStore()
         <div class="i-tabler-bell h-5 w-5 text-slate-500" />
       </button>
 
-      <button class="h-10 w-10 rounded-full bg-teal-400"></button>
+      <button>
+        <TheHeaderAvatar class="h-10 w-10" />
+      </button>
     </div>
   </header>
 </template>

@@ -1,4 +1,5 @@
 import { fileURLToPath, URL } from 'node:url'
+import { resolve } from 'node:path'
 
 import { defineConfig } from 'vite'
 import vue from '@vitejs/plugin-vue'
@@ -7,8 +8,8 @@ import Layouts from 'vite-plugin-vue-layouts'
 import Components from 'unplugin-vue-components/vite'
 import AutoImport from 'unplugin-auto-import/vite'
 import Unocss from 'unocss/vite'
+import { imagetools as ImageTools } from 'vite-imagetools'
 import VueI18n from '@intlify/vite-plugin-vue-i18n'
-import { resolve } from 'node:path'
 
 // https://vitejs.dev/config/
 export default defineConfig({
@@ -46,6 +47,9 @@ export default defineConfig({
 
     // https://github.com/antfu/unocss
     Unocss(),
+
+    // https://github.com/JonasKruckenberg/imagetools/tree/main/packages/vite
+    ImageTools(),
 
     // https://github.com/intlify/bundle-tools/tree/main/packages/vite-plugin-vue-i18n
     VueI18n({

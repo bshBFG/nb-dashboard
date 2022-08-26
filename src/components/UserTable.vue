@@ -86,7 +86,7 @@ const users: User[] = [
           </td>
           <td class="p-4">
             <div class="flex items-center">
-              <div class="relative h-10 w-10 bg-teal-400 rounded-full"></div>
+              <div><TheHeaderAvatar class="h-10 w-10" /></div>
               <div class="ml-4 flex flex-col">
                 <div class="font-semibold text-slate-700">
                   {{ user.firstName }} {{ user.lastName }}

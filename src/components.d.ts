@@ -7,6 +7,7 @@ export {}
 
 declare module '@vue/runtime-core' {
   export interface GlobalComponents {
+    AppAvatar: typeof import('./components/AppAvatar.vue')['default']
     AppButton: typeof import('./components/AppButton.vue')['default']
     AppTable: typeof import('./components/AppTable.vue')['default']
     AppTableUsers: typeof import('./components/AppTableUsers.vue')['default']
@@ -19,6 +20,7 @@ declare module '@vue/runtime-core' {
     TheContent: typeof import('./components/TheContent.vue')['default']
     TheContentLayout: typeof import('./components/TheContentLayout.vue')['default']
     TheHeader: typeof import('./components/TheHeader.vue')['default']
+    TheHeaderAvatar: typeof import('./components/TheHeaderAvatar.vue')['default']
     TheLayout: typeof import('./components/TheLayout.vue')['default']
     TheLogo: typeof import('./components/TheLogo.vue')['default']
     TheSidebar: typeof import('./components/TheSidebar.vue')['default']
